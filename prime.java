@@ -15,8 +15,8 @@ else
 continue;
 }}
 if(flag==1)
-System.out.println("nope");
+System.out.println("no");
 else
-System.out.println("prime");
+System.out.println("yes");
 }
 }
