@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class star
+{
+public static void main(String args[])
+{
+Scanner scan=new Scanner(System.in);
+int N=scan.nextInt();
+int a,b,c;
+for(a=1;a<=N;a++)
+{
+for(b=a;b<=N;b++)
+{
+System.out.print(" ");
+}
+for(c=1;c<=a;c++)
+{
+System.out.print(c);
+}
+
+System.out.println();
+}
+}
+}
