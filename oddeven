@@ -1,0 +1,16 @@
+import java.util.scanner;
+class checksign{
+public static void main(string[] qwe){
+scanner scan=new scanner(system.in);
+int a=scan.nextint();
+if (a<0){
+system.out.println("negative");
+}
+else if(a==0){
+system.out.println("zero");
+}
+else{
+system.out.println("positive");
+}
+}
+}
