@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class unique
+{
+public static void main(String args[])
+{
+
+Scanner scan=new Scanner(System.in);
+int n=scan.nextInt();
+int rem=0;
+int arr[]=new int[10];
+int count=0;
+int index=0;
+while(n>0)
+{
+rem=n%10;
+arr[rem]++;
+n=n/10;
+}
+for(index=0;index<arr.length;index++)
+{
+if(arr[index]>0)
+{
+count++;
+}
+}
+System.out.println(count);
+}
+}
