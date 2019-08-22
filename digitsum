@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class sumnk {
+public static void main(String[] qwe) {
+Scanner scan=new Scanner(System.in);
+int N=scan.nextInt();
+int K=scan.nextInt();
+int x=1;
+int sum=0;
+while(N>0)
+{
+System.out.println(N);
+N++;
+}
+while(x<=K)
+{
+sum=sum+K;
+x++;
+}
+System.out.println(sum);
+}
+}
