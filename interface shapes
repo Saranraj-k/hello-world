@@ -1,0 +1,24 @@
+interface Drawable{  
+void draw();  
+static int cube(int x)
+{
+return x*x*x;
+}  
+}  
+class cubex implements Drawable
+{  
+public void draw()
+{
+System.out.println("drawing cube");
+}  
+}  
+  
+ public class  shapes
+{  
+public static void main(String args[])
+{  
+Drawable d=new cubex();  
+d.draw();  
+System.out.println(Drawable.cube(3));  
+}
+}  
