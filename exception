@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class exception
+{
+public static void main(String args[])
+{
+Scanner scan=new Scanner (System.in);
+int i=30;
+int j=100;
+try{
+int d=i/j;
+System.out.println("saran");
+}
+catch(ArithmeticException pi)
+{
+System.out.println(i/(j+2));
+}
+
+}
+}
