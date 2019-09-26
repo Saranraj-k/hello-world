@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class lcmm
+{
+public static void main(String args[])
+{
+Scanner scan= new Scanner(System.in);
+int a=scan.nextInt();
+int b=scan.nextInt();
+int flag=1;
+int lcm;
+lcm =(a>b)?a:b;
+while(flag==1)
+{
+if(lcm%a==0 && lcm%b==0)
+{
+System.out.println(lcm);
+flag=0;
+break;
+}
+++lcm;
+}
+}
+}
