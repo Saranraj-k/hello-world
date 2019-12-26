@@ -1,0 +1,59 @@
+
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+       
+        BufferedReader br=new BufferedReader(new InputStreamReader (System.in));
+        int inputcount=Integer.parseInt(br.readLine());
+        int arr[]=new int[inputcount];
+        for(int i=0;i<arr.length;i++)
+        {
+             arr[i]=Integer.parseInt(br.readLine());
+        }
+        for(int i=0;i<arr.length;i++)
+        {
+            seatarrangement(arr[i]);
+        }
+
+    }
+    private static void seatarrangement(int num){
+        String  s[]=new String[12];
+        int block=((num-1)/12 )+1;
+         int l=block*12;
+    int f=12*((num-1)/12)+1;
+    for(int i=0,k=11;i<6;i++,k--)
+    {
+        if(i==0 || i==5)
+        {
+            s[i]=String.valueOf(l--)+" WS";
+            s[k]=String.valueOf(f++)+" WS";
+            
+        }
+        else if(i==1 || i==4)
+        {
+            s[i]=String.valueOf(l--)+" MS";
+            s[k]=String.valueOf(f++)+" MS";
+            
+        }
+        else
+        {
+            s[i]=String.valueOf(l--)+" AS";
+            s[k]=String.valueOf(f++)+" AS";
+            
+        }
+    }
+    int pos=0;
+    if(num%12==0)
+    {
+        pos=11;
+    }
+        else
+        {
+            pos=(num%12)-1;    
+            
+            
+        }
+    System.out.println(s[pos]);
+        
+    }
+}
