@@ -1,0 +1,29 @@
+import java.util.Scanner;
+class TestClass {
+    public static void main(String args[] ) {
+        
+        Scanner scan=new Scanner(System.in);
+        String s=scan.nextLine();
+        char c[]=s.toCharArray();
+		int length=s.length();
+		int countforo=0,countforz=0;
+		for(int i=0;i<length;i++)
+		{
+		    c[i]=s.charAt(i);
+		    if(c[i]=='z')
+		    {
+		        countforz++;
+		    }
+		    else if(c[i]=='o')
+		    {
+		        countforo++;
+		    }
+		}
+		    if(2*countforz==countforo)
+		    System.out.print("Yes");
+		    else
+		    
+		    System.out.print("No");
+
+    }
+}
