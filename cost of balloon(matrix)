@@ -1,0 +1,64 @@
+import java.util.Scanner;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        
+        Scanner scan=new Scanner(System.in);
+        int t=scan.nextInt();
+        int p,g,n;
+        while(t>0)
+        {
+            p=scan.nextInt();
+            g=scan.nextInt();
+            n=scan.nextInt();
+            int f=0,s=0;
+            int arr[][]=new int[n][2];
+            for(int i=0;i<n;i++)
+            {
+                arr[i][0]=scan.nextInt();
+                arr[i][1]=scan.nextInt();
+            }
+           
+            for(int i=0;i<n;i++)
+            {
+                if(arr[i][0]==1)
+                {
+                    f++;
+                }
+                if(arr[i][1]==1)
+                {
+                    s++;
+                }
+            }
+            if(g>=p)
+            {
+                if(f>s)
+                {
+                    s=s*g;
+                    f=f*p;
+                    
+                }
+                else
+                {
+                    s=s*p;
+                    f=f*g;
+                }
+            }
+            else
+            {
+                if(f>s)
+                {
+                    f=f*g;
+                    s=s*p;
+                }
+                else
+                {
+                    s=s*g;
+                    f=f*p;
+                }
+            }
+            System.out.println(f+s);
+            t--;
+        }
+
+    }
+}
