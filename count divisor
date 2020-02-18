@@ -1,0 +1,18 @@
+import java.util.Scanner;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner scan=new Scanner(System.in);
+        int i=scan.nextInt();
+        int j=scan.nextInt();
+        int k=scan.nextInt();
+        int count=0;
+        for(int g=i;g<=j;g++)
+        {
+            if(g%k==0)
+            {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
