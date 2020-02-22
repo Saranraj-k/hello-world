@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner scan=new Scanner(System.in);
+        int s=scan.nextInt();
+        int a=0,b=7;
+        while(s-->0)
+        {
+            int n=scan.nextInt();
+            if(n<=((a+b)/2))
+            {
+                System.out.println("A");
+                a=n;
+            }
+            else
+            {
+                System.out.println("B");
+                b=n;
+            }
+        }
+        
+    }
+}
