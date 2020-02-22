@@ -1,0 +1,40 @@
+import java.util.Scanner;
+class TestClass
+{
+    public static void main(String args[] ) throws Exception
+    {
+       
+       
+        String s1,s2;
+		Scanner scan = new Scanner(System.in);
+		int t;
+		t=scan.nextInt();
+		for(int i=0; i<t; i++)
+		{
+			s1=scan.next();
+			s2=scan.next();
+			int l1,l2;
+			l1=s1.length();
+			l2=s2.length();
+			char a1[]=s1.toCharArray();
+			char a2[]=s2.toCharArray();
+			int j=0,k=0,c=0;
+			while(j<l1 && k<l2)
+			{
+				if(a1[j]==a2[k])
+				{
+					a2[k]='0';
+					c++;
+					j++;
+					k=0;
+				}
+				else
+					k++;
+			}
+			if(c==l1)
+				System.out.println("YES");
+			else
+				System.out.println("NO");
+		}
+    }
+}
