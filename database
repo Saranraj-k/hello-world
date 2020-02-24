@@ -1,0 +1,195 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+ 
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+ 
+//import for Scanner and other utility classes
+import java.util.*;
+ 
+ 
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+ 
+class TestClass {
+    static class FastReader 
+    { 
+        BufferedReader br; 
+        StringTokenizer st; 
+  
+        public FastReader() 
+        { 
+            br = new BufferedReader(new
+                     InputStreamReader(System.in)); 
+        } 
+  
+        String next() 
+        { 
+            while (st == null || !st.hasMoreElements()) 
+            { 
+                try
+                { 
+                    st = new StringTokenizer(br.readLine()); 
+                } 
+                catch (IOException  e) 
+                { 
+                    e.printStackTrace(); 
+                } 
+            } 
+            return st.nextToken(); 
+        } 
+  
+        int nextInt() 
+        { 
+            return Integer.parseInt(next()); 
+        } 
+  
+        long nextLong() 
+        { 
+            return Long.parseLong(next()); 
+        } 
+  
+        double nextDouble() 
+        { 
+            return Double.parseDouble(next()); 
+        } 
+  
+        String nextLine() 
+        { 
+            String str = ""; 
+            try
+            { 
+                str = br.readLine(); 
+            } 
+            catch (IOException e) 
+            { 
+                e.printStackTrace(); 
+            } 
+            return str; 
+        } 
+    } 
+    		static boolean isInt(String combo) {
+int len=combo.length();
+		for(int i=0;i<len;i++) {
+			if(combo.charAt(i)<'0'||combo.charAt(i)>'9') {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+		 static String  printme(int[] lengths,int m) {
+		String lines="";
+		lines=lines+"+"; //bw.write("+");
+		for (int p = 0; p < m; p++) {
+			int length = lengths[p];
+			
+			for (int j = 0; j < length + 2; j++) {
+				lines = lines + "-";
+				//bw.write("-");
+ 
+			}
+		//	bw.write("+");
+			lines = lines + "+";
+			//lines=lines+"\n";
+		}
+		return lines;
+		//bw.write("\n");
+	//----/\	
+	}
+			static String printAlignment(int spaces) {
+			String alignmentspaces="";
+			for (int h = 0; h <= spaces; h++) {
+ 
+				alignmentspaces = alignmentspaces + " ";
+ 
+			}
+			return alignmentspaces;
+		}
+    public static void main(String args[] ) throws Exception {
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		FastReader s = new FastReader();
+		int T = s.nextInt();
+ 
+		for (int i = 0; i < T; i++) {
+			int m = s.nextInt();
+			int n = s.nextInt();
+ 
+			String[][] combo = new String[n + 1][m];
+			for (int k = 0; k < n + 1; k++) {
+				String[] temp = s.nextLine().split(" ");
+				for (int j = 0; j < m; j++) {
+					combo[k][j] = temp[j];
+				}
+			}
+ 
+			int[] lengths = new int[m];
+			for (int c = 0; c < m; c++) {
+				int length = Integer.MIN_VALUE;
+				for (int r = 0; r < n + 1; r++) {
+					if (combo[r][c].length() > length) {
+						length = combo[r][c].length();
+					}
+				}
+				lengths[c] = length;
+			}
+			//String lines = "";
+		String printme=	printme(lengths,m);
+		//	bw.write(printme(lengths,m));
+			//bw.write("\n");
+			
+			
+		
+ 
+			//lines=lines+"\n";
+			for (int row = 0; row < n + 1; row++) {
+				if (row == 0 || row == 1 || row == n + 1) {
+					//bw.write("+");
+					bw.write(printme);
+					bw.write("\n");
+					//bw.write(lines);
+ 
+					//bw.write("\n");
+				}
+				bw.write("|");
+ 
+				
+			
+				
+				for (int col = 0; col < m; col++) {
+					int spaces = lengths[col] - combo[row][col].length();
+ 
+					String alignmentspaces = printAlignment(spaces);
+	
+					if (isInt(combo[row][col])) {
+ 
+						bw.write(alignmentspaces);
+						bw.write(combo[row][col]);
+ 
+						bw.write(" ");
+						bw.write("|");
+ 
+					} else {
+ 
+						bw.write(" ");
+						bw.write(combo[row][col]);
+ 
+						bw.write(alignmentspaces);
+ 
+						bw.write("|");
+ 
+					}
+ 
+				}
+ 
+				bw.write("\n");
+			}
+			bw.write(printme);
+ 
+				//bw.write(lines);		
+			bw.write("\n");
+ 
+		}
+		bw.close();}
+}
