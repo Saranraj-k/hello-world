@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class TestClass 
+{
+    public static void main(String args[] ) throws Exception
+    {
+       Scanner scan=new Scanner(System.in);
+       String s=scan.nextLine();
+     int arr[]=new int[7];
+     arr[0]=Character.getNumericValue(s.charAt(0));
+     arr[1]=Character.getNumericValue(s.charAt(1));
+     arr[2]=Character.getNumericValue(s.charAt(3));
+     arr[3]=Character.getNumericValue(s.charAt(4));
+     arr[4]=Character.getNumericValue(s.charAt(5));
+     arr[5]=Character.getNumericValue(s.charAt(7));
+     arr[6]=Character.getNumericValue(s.charAt(8));
+     if(s.contains("A")||s.contains("E")||s.contains("I")||s.contains("O")||s.contains("U")||s.contains("Y"))
+     {
+         System.out.println("invalid");
+     }
+     else
+     {
+    
+         if(((arr[0]+arr[1])%2==0)&&((arr[2]+arr[3])%2==0)&&((arr[3]+arr[4])%2==0)&&((arr[5]+arr[6])%2==0))
+         {
+             System.out.println("valid");
+             
+         }
+         else
+         {
+             System.out.println("invalid");
+         }
+     }
+ }
+     
+}
