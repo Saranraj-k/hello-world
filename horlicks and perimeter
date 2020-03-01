@@ -1,0 +1,20 @@
+import java.util.Scanner;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner scan=new Scanner(System.in);
+        int d=scan.nextInt();
+        int count=0;
+        for(int i=0;i<d;i++)
+        {
+            int r=scan.nextInt();
+            int g=scan.nextInt();
+            double area = (22*r*2)/7;
+            int hor=g*100;
+            if(hor >= area)
+            {
+                count++;
+            }
+        }
+       System.out.println(count);
+    }
+}
