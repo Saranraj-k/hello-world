@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class TestClass {
+public static void main(String args[] ) throws Exception {
+long sum=0,denom,mean,num;
+int i,j,n,q,l,r;
+Scanner sc=new Scanner(System.in);
+n=sc.nextInt();
+q=sc.nextInt();
+long arr[]=new long[n];
+long arr1[]=new long[n];
+for(i=0;i<n;i++)
+{
+arr[i]=sc.nextLong();
+sum+=arr[i];
+arr1[i]=sum;
+}
+StringBuffer sb = new StringBuffer();
+for(j=0;j<q;j++)
+{
+l=sc.nextInt();
+r=sc.nextInt();
+denom=(r-l)+1;
+if(l==1)
+num=arr1[r-1];
+else
+num=arr1[r-1]-arr1[l-2];
+sb.append((int)(num/denom));
+sb.append("\n");
+}
+System.out.println(sb.toString());
+}
+}
