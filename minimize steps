@@ -1,0 +1,33 @@
+
+import java.util.*;
+
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner scan=new Scanner(System.in);
+        int t=scan.nextInt();
+        while(t-- > 0)
+        {
+            int k=scan.nextInt();
+            int m=scan.nextInt();
+            int n=scan.nextInt();
+            System.out.println(r(k,m,n));
+        }
+    }
+    public static int r(int a,int b, int c)
+    {
+        if(a>=b)
+        {
+            return((a-b)/2 + (a-b)%2);
+        }
+        else if(b%c == 0)
+        {
+            return(1+r(a,b/c,c));
+        }
+        else
+        {
+            int x=(b/c+1)*c;
+            return((x-b)/2 + (x-b)%2 + r(a,x,c));
+        }
+    }
+}
