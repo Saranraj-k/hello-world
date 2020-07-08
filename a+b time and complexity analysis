@@ -1,0 +1,13 @@
+import java.util.*;
+
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner scan=new Scanner(System.in);
+        while(scan.hasNextLine())
+        {
+            System.out.println(scan.nextBigInteger().add(scan.nextBigInteger()));
+        }
+
+    }
+}
