@@ -1,0 +1,26 @@
+package introductiontooops;
+
+public class motorbike {
+	private int spead;
+	
+	void setspead(int spead)
+	{
+		this.spead=spead;
+	}
+	public int getSpead() {
+		return spead;
+	}
+	public void setSpead(int spead) {
+		this.spead = spead;
+	}
+	int getspead()
+	{
+		return this.spead;
+	}
+
+	void start()
+	{
+		System.out.println("sarted");
+	}
+
+}
