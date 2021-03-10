@@ -1,0 +1,114 @@
+package banking;
+
+import java.util.Scanner;
+
+public class bank {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		bank bank1= new bank();
+		bank1.run();
+
+	}
+	public void run() {
+		
+		System.out.println("what s ur name");
+		Scanner scan =new Scanner(System.in);
+		String name =scan.next();
+		System.out.println("heelo" + name);
+		Customer customer = new Customer(name);
+		System.out.println("what s the address");
+		String address=scan.next();
+		customer.setaddress(address);
+		bankaccount checkingaccount =  new bankaccount("checking",customer);
+		bankaccount savingsaccount =  new bankaccount("saving",customer);
+		System.out.println("customer info");
+		System.out.println(checkingaccount.getcustomerinfo());
+		System.out.println("account info");
+		System.out.println(checkingaccount.getaccountinfo());
+		System.out.println("savingsaccnt");
+		System.out.println(savingsaccount.getaccountinfo());
+		System.out.println("amount (decimal) depo in ur checking account");
+		double amount=scan.nextDouble();
+		checkingaccount.deposit(amount);
+		System.out.println("amount (decimal) depo in ur savings account");
+		 amount=scan.nextDouble();
+		savingsaccount.deposit(amount);
+		System.out.println(checkingaccount.getaccountinfo());
+		System.out.println(savingsaccount.getaccountinfo());
+		System.out.println("amount (decimal) wdraw in ur checking account");
+		amount = scan.nextDouble();
+		try {
+			checkingaccount.withdraw(amount);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		System.out.println("amount (decimal) wdraw in ur savings account");
+		amount = scan.nextDouble();
+		try {
+			savingsaccount.withdraw(amount);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		System.out.println(checkingaccount.getaccountinfo());
+		System.out.println(savingsaccount.getaccountinfo());
+		
+		
+		
+		
+		
+		
+	}
+
+}
+package banking;
+
+public class bankaccount {
+	String accounttype;
+	double balance;
+	
+	Customer customer;
+	public bankaccount(String accounttype, Customer customer) {
+		this.accounttype=accounttype;
+		this.customer=customer;
+		
+	}
+	public void deposit(double amount) {
+		this.balance +=amount;
+	}
+	public void withdraw(double amount) throws Exception {
+		if(amount > this.balance) {
+			throw new Exception("amount is grester than the balance");
+		}
+		this.balance -=amount;
+	}
+	public String getaccountinfo() {
+		return this.accounttype+ ";" + this.balance;
+	}
+	public String getcustomerinfo() {
+		return this.customer.getname()+"from"+ this.customer.getaddress();
+	}
+
+}
+package banking;
+
+public class Customer {
+	String name;
+	String address;
+	public Customer(String name) {
+		this.name=name;
+	}
+	public void setaddress(String address) {
+		this.address=address;
+	}
+	public String getname() {
+		return this.name;
+	}
+	public String getaddress() {
+		return this.address;
+		
+	}
+
+}
