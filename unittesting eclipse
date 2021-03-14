@@ -1,0 +1,53 @@
+package counterproject;
+
+public class counter {
+	int count;	
+	public int increment() {
+		this.count++;
+		return this.count;
+	}
+	public int decrement() {
+		this.count--;
+		return this.count;
+	}
+	public int getcount() {
+		return this.count;
+	}
+	                     
+}
+package counterproject;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class counterTest {
+	counter counter1;
+	@BeforeEach
+	void setUp() throws Exception {
+		this.counter1= new counter();
+	}
+
+	@Test
+	void testIncrement() {
+	assertTrue(this.counter1.increment() == 1); 
+	assertTrue(this.counter1.increment() == 2); 
+	this.counter1.increment();
+	assertFalse(this.counter1.getcount() == 2," should not rteurn 2 aftercalling increment a third time");	
+	assertEquals(3,this.counter1.getcount());
+	assertNotEquals(3,this.counter1.increment());
+	}
+
+	@Test
+	void testDecrement() {
+		assertEquals(-1,this.counter1.decrement());
+		assertTrue(this.counter1.decrement() == -2); 
+		this.counter1.decrement();
+		assertFalse(this.counter1.getcount() == -2," should not rteurn 2 aftercalling decrement a third time"); 
+		
+		assertTrue(this.counter1.getcount() == -3);
+	}
+	
+
+}
