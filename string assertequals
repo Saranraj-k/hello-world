@@ -1,0 +1,36 @@
+package person;
+
+public class person {
+	String name;
+	int age;
+	public person(String name, int age) {
+		this.name = name;
+		this.age=age;
+	}
+	public boolean equals(Object something) {
+		person otherperson = (person) something;
+		return this.name.equals(otherperson.name);
+		
+	}
+}
+package person;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class personTest {
+
+	@Test
+	void testPerson() {
+		person person1= new person("saran",22);
+		person person2= new person("raj",23);
+		assertEquals(person1.age,person2.age);
+		assertNotEquals(person1,person2);
+		person person3= new person("sarnn",22);
+		assertEquals(person1,person3);
+		
+		
+	}
+
+}
