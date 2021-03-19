@@ -1,0 +1,61 @@
+package sgame;
+
+import java.util.Scanner;
+
+public class SimpleGame {
+	public static String convertTime(int seconds){
+		// TODO: Your code goes here
+		if(seconds > 0) {
+			int p1=seconds%60;
+			int p2=seconds/60;
+			int p3=p2%60;
+			   int p4=p2/60;
+			  
+			   return p4 + ":" + p3 + ":" + p1;
+			}
+			else
+			{
+				return seconds + ":" + seconds + ":" +seconds;
+			}
+	}
+	public static int digitsSum(int input){
+		// TODO: Your code goes here
+		int m,sum=0;
+		if(input<10) {
+			return input;
+		}
+		else
+		{
+			while(input>0)
+			{
+				m=input%10;
+				sum=sum+m;
+				input=input/10;
+			}
+			return sum;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan=new Scanner(System.in);
+		int choice=scan.nextInt();
+		if(choice == 1)
+		{
+		
+		int seconds = scan.nextInt();
+		System.out.println(convertTime(seconds));
+		}
+		
+		if(choice == 2){
+			int input=scan.nextInt();
+			System.out.println(digitsSum(input));
+			
+			
+				
+		}
+		scan.close();
+		
+	}
+
+}
