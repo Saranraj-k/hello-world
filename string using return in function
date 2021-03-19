@@ -1,0 +1,25 @@
+import java.util.Scanner;
+ class TestClass {
+    public static String checkvowel(String name){
+             if((name.contains("a")&&name.contains("e")&&name.contains("i")&&name.contains("o")&&name.contains("u"))||(name.contains("A")&&name.contains("E")&&name.contains("I")&&name.contains("O")&&name.contains("U"))){
+            return "lovely string";
+        }
+        else{
+            return "ugly string";
+        }         
+        }
+    public static void main(String args[] )  {
+       
+        // Write your code here
+        Scanner scan=new Scanner(System.in);
+        int t = scan.nextInt();
+      
+        for(int i=0;i<t;i++){
+            String name = scan.next();
+        System.out.println(checkvowel(name));
+        }
+       
+       
+
+    }
+}
