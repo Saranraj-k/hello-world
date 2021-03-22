@@ -1,0 +1,42 @@
+package oops;
+
+public class bikess {
+	private int speed;
+	
+	void start()
+	{
+		System.out.println("started");
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+}
+package oops;
+
+public class bikerunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		bikess ducati = new bikess();
+		bikess honda = new bikess();
+		ducati.start();
+		honda.start();
+		
+		honda.setSpeed(100);
+		ducati.setSpeed (190);
+		
+		System.out.println(ducati.getSpeed());
+
+		System.out.println(honda .getSpeed());
+		
+			
+
+	}
+
+}
