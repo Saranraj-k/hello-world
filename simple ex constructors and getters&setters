@@ -1,0 +1,54 @@
+package binnummber;
+
+public class binumber {
+	private int i;
+	private int j;
+	
+
+	public binumber(int i, int j) {
+		// TODO Auto-generated constructor stub
+		this.i =i;
+		this.j =j;
+		
+		
+	}
+	public int getnumber1() {
+		return i;
+	}
+	public int getnumber2() {
+		return j;
+	}
+	public int add() {
+		return i+j;
+		
+	}
+	public int multiply() {
+		return i*j;
+	}
+	public void twice() {
+		this.i =i*2;
+		this.j = j*2;
+		
+	
+	}
+	
+
+}
+package binnummber;
+
+public class binumberrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		binumber number = new binumber(2,3);
+		System.out.println(number.add());
+		System.out.println(number.multiply());
+	    number.twice();
+	    System.out.println(number.getnumber1());
+	    System.out.println(number.getnumber2());
+	    
+		
+
+	}
+
+}
