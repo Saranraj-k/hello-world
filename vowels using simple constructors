@@ -1,0 +1,84 @@
+package characterprogram;
+
+public class mychar {
+
+	private  char ch;
+
+	public mychar(char ch) {
+		// TODO Auto-generated constructor stub
+		this.ch=ch;
+	}
+
+	public boolean isvowel() {
+		// TODO Auto-generated method stub
+		if(ch=='a' || ch=='e' || ch=='i' || ch == 'o' || ch== 'u'  || ch == 'A' || ch=='E' || ch=='I' || ch== 'O'|| ch == 'U')
+		return true;
+		
+		else
+		return false;
+	}
+
+	public boolean isnumber() {
+		// TODO Auto-generated method stub
+		if(ch >= 48 && ch<=57)
+		return true;
+		else 
+			return false;
+	}
+
+	public boolean isalphabet() {
+		// TODO Auto-generated method stub
+		if(ch>=97 && ch<=122)
+		return true;
+		if(ch >= 65 && ch<=96)
+			return true;
+		return false;
+		
+	}
+
+	
+
+	public boolean isconsonant() {
+		// TODO Auto-generated method stub
+		if(isalphabet() && !isvowel())
+		return true;
+		return false;
+	}
+
+	public static void toprinttoowercase() {
+		// TODO Auto-generated method stub
+		for(char ch ='a' ; ch <= 'z';  ch++) {
+			
+			System.out.println(ch);
+		}
+		
+	}
+
+	public static void toprintuppercase() {
+		// TODO Auto-generated method stub
+		for(char ch ='A' ; ch <= 'Z';  ch++) {
+			
+			System.out.println(ch);
+		}
+		
+	}
+	
+
+}
+package characterprogram;
+
+public class characterrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		mychar chara = new mychar('u');
+		System.out.println(chara.isvowel());
+		System.out.println(chara.isnumber());
+		System.out.println(chara.isalphabet());
+		System.out.println(chara.isconsonant());
+		chara.toprinttoowercase();
+		chara.toprintuppercase();
+
+	}
+
+}
