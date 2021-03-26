@@ -1,0 +1,29 @@
+package conditionalsifandswitch;
+
+import java.util.Scanner;
+
+public class ifrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		puzzle1();
+		
+
+	}
+	private static  void puzzle1() {
+		Scanner scan=new Scanner(System.in);
+			int i=scan.nextInt();
+			if(i<10)
+			{
+				System.out.println("yes");
+			}
+			else if(i >=10) {
+				System.out.println("jio");
+			}
+			else {
+				System.out.println("no");
+			}
+		
+	}
+}
