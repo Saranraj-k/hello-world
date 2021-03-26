@@ -1,0 +1,38 @@
+package simpleinterest;
+
+import java.math.BigDecimal;
+
+public class sicalculator {
+	BigDecimal principal;
+	BigDecimal interest;
+
+	public sicalculator(String principal, String interest) {
+		// TODO Auto-generated constructor stub
+		this.principal=new BigDecimal(principal);
+		this.interest=new BigDecimal(interest).divide(new BigDecimal(100));
+		
+	}
+
+	public BigDecimal calculatetv(int time) {
+		
+		// TODO Auto-generated method stub
+		BigDecimal totalvalue= principal.add(principal.multiply(interest).multiply(new BigDecimal(time)));
+		return totalvalue	;
+	}
+
+}
+package simpleinterest;
+
+import java.math.BigDecimal;
+
+public class sicalculatorrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		sicalculator calculator = new sicalculator("4500","50");
+		 BigDecimal totalvalue = calculator.calculatetv(6);
+		 System.out.println(totalvalue   );
+
+	}
+
+}
