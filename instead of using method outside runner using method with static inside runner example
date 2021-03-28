@@ -1,0 +1,75 @@
+package conditionalsifandswitch;
+
+import java.util.Scanner;
+
+public class menurunner {
+
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		int i =scan.nextInt();
+		// TODO Auto-generated method stub
+		 determinenameofday day= new determinenameofday(i);
+		 System.out.println(day.getday());
+		 int mon=scan.nextInt();
+		 System.out.println(detnameofmon(mon));
+		 System.out.println(day.isweekday());
+		
+		 }
+
+	
+
+	public static String detnameofmon(int i) {
+		// TODO Auto-generated method stub
+		switch(i) {
+		case 1:
+			return "jan";
+		case 2: return "feb";
+		default:
+			return "inavlid";
+		}
+		
+		
+		}
+	
+		
+
+	}
+
+
+package conditionalsifandswitch;
+
+public class determinenameofday {
+
+	
+	private int i;
+
+	public  determinenameofday(int i) {
+		// TODO Auto-generated constructor stub
+		this.i=i;
+	}
+
+	public String getday() {
+		// TODO Auto-generated method stub
+		switch(i) {
+		case 1:
+		return "s";
+		case 2:
+			return "b";
+		default:
+			return "ss";
+		}
+		
+	}
+
+	public boolean isweekday() {
+		// TODO Auto-generated method stub
+		switch(i) {
+		case 1: return true;
+		case 2: return true;
+		case 3: return true;
+		default: return false;
+		}
+		
+	}
+
+}
