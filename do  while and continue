@@ -1,0 +1,29 @@
+package whileproject;
+
+import java.util.Scanner;
+
+public class dowhilerunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan=new Scanner(System.in);
+		int g=-1;
+		do {
+			if(g > 0) {
+			System.out.println(g*g*g);
+			}
+			g=scan.nextInt();
+			
+		}
+		while(g >= 0);
+		System.out.println("thankyou");
+		for(int i=0;i<=10;i++)
+		{
+			if(i %2 ==0)
+				continue;
+			System.out.println(i + " ");
+		}
+
+	}
+
+}
