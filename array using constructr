@@ -1,0 +1,94 @@
+package arrayproject;
+
+import java.math.BigDecimal;
+import java.util.Scanner;
+
+public class arrayrunner {
+
+	public static void main(String[] args) {
+		Scanner scan= new Scanner(System.in);
+		int n=scan.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=scan.nextInt();
+		}
+		
+	Student student = new Student( "saran",arr );
+	int num=student.getnooofmarks();
+	System.out.println(num);
+	int sum=student.gettotalmarks();
+	System.out.println(sum);
+	int maxmark=student.getmaxmarks();
+	System.out.println(maxmark);
+	int minmark=student.getminmarks();
+	System.out.println(minmark);
+	BigDecimal aver=student.getaver();
+	System.out.println(aver);
+
+	}
+
+}
+package arrayproject;
+
+import java.math.BigDecimal;
+
+public class Student {
+
+	private int[] arr;
+	private String name;
+
+	public Student(String name, int[] arr) {
+		// TODO Auto-generated constructor stub
+		this.name = name;
+		this.arr = arr;
+		
+	}
+
+	public int getnooofmarks() {
+		// TODO Auto-generated method stub
+		return arr.length;
+
+	}
+
+	public int gettotalmarks() {
+		// TODO Auto-generated method stub
+		int sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			sum=sum+arr[i];
+		}
+		return sum;
+	}
+
+	public int getmaxmarks() {
+		// TODO Auto-generated method stub
+		int max=0;
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i] > max)
+			{
+				max= arr[i];
+			}
+		}
+		return max;
+	}
+
+	public int getminmarks() {
+		// TODO Auto-generated method stub
+		int min=Integer.MAX_VALUE;
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i] < min)
+			{
+				min= arr[i];
+			}}
+		return min;
+	}
+
+	public BigDecimal getaver() {
+		// TODO Auto-generated method stub
+		int sum=gettotalmarks();
+		int noof=getnooofmarks();
+		return new BigDecimal(sum).divide (new BigDecimal(noof));
+	}
+
+}
