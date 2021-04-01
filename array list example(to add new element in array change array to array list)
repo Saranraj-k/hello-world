@@ -1,0 +1,115 @@
+package arrayproject;
+
+import java.math.BigDecimal;
+import java.util.Scanner;
+
+public class arrayrunner {
+
+	public static void main(String[] args) {
+		Scanner scan= new Scanner(System.in);
+		int n=scan.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<arr.length;i++)
+	{
+			arr[i]=scan.nextInt();
+		}
+		
+	Student student = new Student( "saran",arr );
+	int num=student.getnooofmarks();
+	System.out.println(num);
+	int sum=student.gettotalmarks();
+	System.out.println(sum);
+	int maxmark=student.getmaxmarks();
+	System.out.println(maxmark);
+	int minmark=student.getminmarks();
+	System.out.println(minmark);
+	BigDecimal aver=student.getaver();
+	System.out.println(aver);
+	System.out.println(student);
+	student.addnewmark(35);
+	System.out.println(student);
+	student.removemarkindex(0);
+	System.out.println(student);
+	}
+
+}
+package arrayproject;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Student {
+
+	private ArrayList<Integer> arr =  new ArrayList<Integer>();
+	private String name;
+
+	public Student(String name, int arr[]) {
+		// TODO Auto-generated constructor stub
+		this.name = name;
+		for(int i=0;i<arr.length;i++)
+		{
+			//important area
+		this.arr.add(arr[i]);
+		}
+		
+	}
+
+	public int getnooofmarks() {
+		// TODO Auto-generated method stub
+		return arr.size();
+
+	}
+
+	public int gettotalmarks() {
+		// TODO Auto-generated method stub
+		int sum=0;
+		//instead of arr.length use arrsize
+		for(int i=0;i<arr.size();i++)
+		{
+			//instead of arr[i] use arr.get
+			sum=sum + arr.get(i);
+		}
+		return sum;
+	}
+
+	public int getmaxmarks() {
+		// TODO Auto-generated method stub
+		//simple way using collections
+		return Collections.max(arr);
+	}
+
+	public int getminmarks() {
+		// TODO Auto-generated method stub
+		int min=Integer.MAX_VALUE;
+		for(int i=0;i<arr.size();i++) {
+			if(arr.get(i)< min)
+			{
+				min= arr.get(i);
+			}}
+		return min;
+	}
+
+	public BigDecimal getaver() {
+		// TODO Auto-generated method stub
+		int sum=gettotalmarks();
+		int noof=getnooofmarks();
+		return new BigDecimal(sum).divide (new BigDecimal(noof));
+	}
+	//to print name with marks
+	public String toString() {
+		return name+arr;
+	}
+
+	public void addnewmark(int mark) {
+		arr.add(mark);
+		
+	}
+
+	public void removemarkindex(int index) {
+		// TODO Auto-generated method stub
+		arr.remove(index);
+		
+	}
+
+}
