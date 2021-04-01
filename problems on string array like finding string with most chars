@@ -1,0 +1,27 @@
+package stringarrays;
+
+//import java.util.Scanner;
+
+public class stringarrayrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Scanner scan =new Scanner(System.in);
+		//int n=scan.nextInt();
+		String days[] = {"sunday","mon","tue","wed","thurs","fri","saturday"};
+		String daywithmostchar="";
+		for(int i=0;i < days.length;i++)
+		{
+			if(days[i].length() > daywithmostchar.length())
+			{
+				daywithmostchar = days[i];
+			}
+		}
+		System.out.println(daywithmostchar);
+		
+		
+		
+
+	}
+
+}
