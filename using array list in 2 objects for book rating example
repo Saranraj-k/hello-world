@@ -1,0 +1,64 @@
+package oopsexample;
+
+public class bookrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Book book = new Book(123,"oops","saran");
+		book.addreview(new review(23,"good",2.3));
+		book.addreview(new review(22,"ok",1.1));
+		System.out.println(book);
+		
+		
+
+	}
+
+}
+package oopsexample;
+
+import java.util.ArrayList;
+
+public class Book {
+
+	private int id;
+	private String name;
+	private String author;
+	private ArrayList<review> reviews = new ArrayList<review>();
+
+	public Book(int id, String name, String author) {
+		// TODO Auto-generated constructor stub
+		this.id=id;
+		this.name=name;
+		this.author=author;
+	}
+	public void addreview(review reviewss)
+	{
+		
+		this.reviews.add(reviewss);
+	}
+	public String toString() {
+		return id+" "+name+" "+author+" "+reviews;
+	}
+
+}
+package oopsexample;
+
+public class review {
+	
+
+	private int ids;
+	private String desc;
+	private double rate;
+
+	public review(int ids, String desc, double rate) {
+		// TODO Auto-generated constructor stub
+		this.ids=ids;
+		this.desc=desc;
+		this.rate=rate;
+	}
+	public String toString()
+	{
+		return ids+" "+desc+" "+rate;
+	}
+
+}
