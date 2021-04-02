@@ -1,0 +1,59 @@
+package oopsexample;
+
+public class rectanglerunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		rectangle rect = new rectangle(3.4,4.5);
+		
+		System.out.println(rect);
+		rect.setLen(2.3);
+		rect.setWid(6.7);
+		System.out.println(rect);
+
+	}
+
+}	
+package oopsexample;
+
+public class rectangle {
+
+	private double wid;
+	private double len;
+
+	public rectangle(double len, double wid) {
+		// TODO Auto-generated constructor stub
+		this.len=len;
+		this.wid=wid;
+		
+	}
+
+	public double getWid() {
+		return wid;
+	}
+
+	public void setWid(double wid) {
+		this.wid = wid;
+	}
+
+	public double getLen() {
+		return len;
+	}
+
+	public void setLen(double len) {
+		this.len = len;
+	}
+	public double area() {
+		return len * wid;
+		
+	}
+	public double perimeter()
+	{
+		return 2*(len + wid);
+	}
+	public String toString() {
+		//in return area() peri() should be used
+		return String.format("len - %f,wid - %f,area -%f,perimeter -%f",len,wid,area(),perimeter());
+	}
+
+}
