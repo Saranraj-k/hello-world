@@ -1,0 +1,58 @@
+package oopsexample;
+
+public class fanrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		fann fan=new fann("havells",0.34,"blue");
+		fan.switchon();
+		fan.setspeed(5);
+		System.out.println(fan);
+		fan.switchoff();
+		fan.setspeed(0);
+		System.out.println(fan);
+		
+		
+		
+
+	}
+
+}
+package oopsexample;
+
+public class fann {
+	//state
+	private String make;
+	private double rad;
+	private String color;
+	private boolean ison;
+	private int speed;
+	public fann(String make, double rad,String color) {
+		this.make=make;
+		this.rad=rad;
+		this.color=color;
+		}
+	public String toString() {
+		//return make + " "+ rad +" "+color+ison+speed;
+		//or else
+		return String.format("make - %s ,rad - %f,color -%s,ison - %b,speed - %d",make,rad,color,ison,speed);
+	}
+	public void switchon() {
+		// TODO Auto-generated method stub
+		this.ison=true;
+		
+		
+	}
+	public void switchoff() {
+		// TODO Auto-generated method stub
+		this.ison=false;
+		setspeed(0);//we can set it on runner also
+		
+	}
+	public void setspeed(int i) {
+		// TODO Auto-generated method stub
+		this.speed=i;
+		
+	}
+
+}
