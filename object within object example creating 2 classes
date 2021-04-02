@@ -1,0 +1,77 @@
+package oopsexample;
+
+public class customerrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Address homeaddress = new Address("l","kl","908");
+		Customer customer = new Customer("saran",homeaddress);
+		Address workaddress = new Address("2","kl","908");
+		System.out.println(customer);
+		customer.setWorkaddress(workaddress);
+		System.out.println(customer);
+		Address homeaddress1 = new Address("3","kl","908");
+		customer.sethomeaddress(homeaddress1);
+		
+		System.out.println(customer);
+		Address workaddress1 = new Address("3","kl","908");
+		customer.setWorkaddress(workaddress1);
+		System.out.println(customer);
+		
+		}
+
+}
+package oopsexample;
+
+public class Customer {
+	private String name;
+	private Address homeaddress;
+	private Address workaddress;
+	public Customer(String name,Address homeaddress)
+	{
+		this.name = name;
+		this.homeaddress=homeaddress;
+		
+	}
+	public Address gethomeaddress()
+	{
+		return homeaddress;
+	}
+	public void sethomeaddress(Address homeaddress)
+	{
+		this.homeaddress=homeaddress;
+	}
+	public Address getWorkaddress() {
+		return workaddress;
+	}
+	public void setWorkaddress(Address workaddress) {
+		this.workaddress = workaddress;
+	}
+	@Override
+	public String toString() {
+		return name +" "+homeaddress+" "+workaddress; 
+				}
+	
+	
+	
+	
+
+}
+package oopsexample;
+
+public class Address {
+	
+	private String line1;
+	private String state;
+	private String zip;
+	public Address(String line1, String state, String zip) {
+		
+		this.line1 = line1;
+		this.state = state;
+		this.zip = zip;
+	}
+	public String toString(){
+		return line1+ " "+state+ " "+zip; 
+	}
+	
+}
