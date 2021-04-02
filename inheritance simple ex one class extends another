@@ -1,0 +1,69 @@
+package oopsexample;
+
+public class studentrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		student student1=new student();
+		
+		person person1=new person();
+		person1.setName("saran");
+		person1.setEmail("sarn2@yahoo.com");
+		String value=person1.toString();
+		System.out.println(value);
+		System.out.println(person1);
+		student1.setName("aran");
+		student1.setEmail("arn2@yahoo.com");
+		System.out.println(student1);
+	}
+
+}
+package oopsexample;
+
+public class person {
+	private String name;
+	private String phno;
+	private String email;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPhno() {
+		return phno;
+	}
+	public void setPhno(String phno) {
+		this.phno = phno;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String toString(){
+	return name+" "+email;
+	}
+	}
+
+
+package oopsexample;
+
+public class student extends person {
+	private String college;
+	private int year;
+	public String getCollege() {
+		return college;
+	}
+	public void setCollege(String college) {
+		this.college = college;
+	}
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+}
