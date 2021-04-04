@@ -1,0 +1,36 @@
+package oops2.interfaces;
+ interface flyable{
+	void fly();
+}
+ class bird implements flyable{
+
+	@Override
+	public void fly() {
+		// TODO Auto-generated method stub
+		System.out.println("fly with wings");
+		
+	}
+	 
+ }
+ class aeroplane implements flyable{
+
+		@Override
+		public void fly() {
+			// TODO Auto-generated method stub
+			System.out.println("fly with fuel");
+			
+		}
+		 
+	 }
+
+public class flyablerunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		flyable fly1= new bird();
+    //important area
+		fly1.fly();
+
+	}
+
+}
