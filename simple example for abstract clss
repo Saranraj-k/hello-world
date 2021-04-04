@@ -1,0 +1,35 @@
+package abstractpuzzle;
+abstract class animal{
+	abstract void bark();
+}
+class dog extends animal{
+
+	@Override
+	void bark() {
+		// TODO Auto-generated method stub
+		System.out.println("bow bow");
+	}
+	
+}
+class cat extends animal{
+
+	@Override
+	void bark() {
+		// TODO Auto-generated method stub
+		System.out.println("meow meow");
+	}
+	
+}
+
+public class animalrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		animal[] animobj= {new dog(),new cat()};
+		for(animal obj:animobj) {
+			obj.bark();
+		}
+
+	}
+
+}
