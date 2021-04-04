@@ -1,0 +1,94 @@
+package oops2.interfaces;
+
+public class gamerunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*mariogame mario1=new mariogame();
+		mario1.up();
+		mario1.down();
+		mario1.left();
+		mario1.right();*/
+		gmingconsole chess =new chessgame();
+		chess.up();
+		chess.down();
+		chess.left();
+		chess.right();
+
+	}
+
+}
+package oops2.interfaces;
+
+public interface gmingconsole {
+	public void up();
+	public void down();
+	public void left();
+	public void right();
+	
+
+}
+package oops2.interfaces;
+
+public class mariogame implements gmingconsole {
+
+	@Override
+	public void up() {
+		// TODO Auto-generated method stub
+		System.out.println("jumep");
+	}
+
+	@Override
+	public void down() {
+		// TODO Auto-generated method stub
+		System.out.println("go into hole");
+		
+	}
+
+	@Override
+	public void left() {
+		// TODO Auto-generated method stub
+		System.out.println("");
+		
+	}
+
+	@Override
+	public void right() {
+		// TODO Auto-generated method stub
+		System.out.println("move front");
+		
+	}
+
+}
+package oops2.interfaces;
+
+public class chessgame implements gmingconsole {
+
+	@Override
+	public void up() {
+		// TODO Auto-generated method stub
+		System.out.println("move up");
+	}
+
+	@Override
+	public void down() {
+		// TODO Auto-generated method stub
+		System.out.println("move down");
+		
+	}
+
+	@Override
+	public void left() {
+		// TODO Auto-generated method stub
+		System.out.println("move left");
+		
+	}
+
+	@Override
+	public void right() {
+		// TODO Auto-generated method stub
+		System.out.println("move right");
+		
+	}
+
+}
