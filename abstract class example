@@ -1,0 +1,79 @@
+package abstractpuzzle;
+
+public class reciperunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		recipe1 recipe = new recipe1();
+		recipe.puzzle();
+		recipemicrowave recipe2=new recipemicrowave();
+		recipe2.puzzle();
+
+	}
+
+}
+package abstractpuzzle;
+
+public abstract class abstractrecipe {
+	public void puzzle() {
+		getready();
+		cook();
+		clean();
+	}
+	abstract void getready();
+	abstract void cook();
+	abstract void clean();
+	
+}
+package abstractpuzzle;
+
+public class recipe1 extends abstractrecipe {
+
+	@Override
+	void getready() {
+		// TODO Auto-generated method stub
+		System.out.println("get raw materials");
+		
+	}
+
+	@Override
+	void cook() {
+		// TODO Auto-generated method stub
+		System.out.println("cook the dish");
+		
+	}
+
+	@Override
+	void clean() {
+		// TODO Auto-generated method stub
+		System.out.println("clean the utensils");
+		
+	}
+
+}
+package abstractpuzzle;
+
+public class recipemicrowave extends abstractrecipe {
+
+	@Override
+	void getready() {
+		// TODO Auto-generated method stub
+		System.out.println("turn on microwave");
+		
+	}
+
+	@Override
+	void cook() {
+		// TODO Auto-generated method stub
+		System.out.println("cook the dish");
+		
+	}
+
+	@Override
+	void clean() {
+		// TODO Auto-generated method stub
+		System.out.println("turn off microwave");
+		
+	}
+
+}
