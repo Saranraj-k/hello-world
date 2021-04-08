@@ -1,0 +1,25 @@
+package collections;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class setrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Character> chara= List.of('a','s','d','e','d','a');
+		Set<Character> treeset=new TreeSet<Character>(chara);
+		System.out.println(treeset);//will print in sorted order
+		//to print in given order
+		Set<Character> linkedhasset=new LinkedHashSet<Character>(chara);
+		System.out.println(linkedhasset);
+		//both method will delete duplicate elements
+		Set<Character> hasset=new HashSet<Character>(chara);
+		System.out.println(hasset);		
+
+	}
+
+}
