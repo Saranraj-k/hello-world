@@ -1,1 +1,43 @@
 
+package collections;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class maprunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str="this is never happened and "+"this should be done and happen";
+		Map<Character,Integer> map=new HashMap<>();
+		char chara[]=str.toCharArray();
+		for(char characters:chara) {
+			Integer integer=map.get(characters);
+			if(integer==null) {
+				map.put(characters,1);
+				
+			}
+			else {
+				map.put(characters, integer+1);
+			}
+			
+		}
+		System.out.println(map);
+		
+		Map<String,Integer> map1=new HashMap<>();
+		String str1[]=str.split(" ");
+		for(String words:str1) {
+			Integer integer=map1.get(words);
+			if(integer==null) {
+				map1.put(words,1);
+				
+			}
+			else {
+				map1.put(words, integer+1);
+			}
+		}
+	System.out.println(map1);
+
+		}
+
+}
