@@ -1,0 +1,55 @@
+package generics;
+
+public class genericsrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		mycustomlist<String> list = new mycustomlist<>();
+		list.addelement("saran");
+		list.addelement("raj");
+		System.out.println(list);
+		String Value=list.get(0);
+		System.out.println(Value);
+		//list.removeelement("raj");
+		//System.out.println(list);
+		mycustomlist<Integer> list2 = new mycustomlist<>();
+		list2.addelement(Integer.valueOf(5));
+		list2.addelement(Integer.valueOf(2));
+		int num=list2.get(0);
+		System.out.println(num);
+		System.out.println(list2);
+		//generics helps to add string and integer to the same list 
+		
+
+	}
+
+}
+package generics;
+
+import java.util.ArrayList;
+
+public class mycustomlist<T> {
+	ArrayList<T> list=new ArrayList<>();
+
+	public void addelement(T element) {
+		// TODO Auto-generated method stub
+		list.add(element);
+		
+	}
+
+	public void removeelement(T element) {
+		// TODO Auto-generated method stub
+		list.remove(element);
+		
+	}
+	public String toString() {
+		return list.toString();
+	}
+
+	public T get(int index) {
+		// TODO Auto-generated method stub
+		return list.get(index);
+	}
+	
+	
+}
