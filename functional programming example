@@ -1,0 +1,31 @@
+package functionalprograming;
+
+import java.util.List;
+
+public class functionrunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<String> list=List.of("apple","bat","cat","dog");
+		printlist(list);
+		printfp(list);
+
+	}
+
+	private static void printfp(List<String> list) {
+		//instead of using for statement using functions help print list
+	list.stream().forEach(element -> System.out.println(element));
+		
+		
+	}
+
+	private static void printlist(List<String> list) {
+		// TODO Auto-generated method stub
+		for(String string:list)
+		{
+			System.out.println(string);
+		}
+		
+	}
+
+}
